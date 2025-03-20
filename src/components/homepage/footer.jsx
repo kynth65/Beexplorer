@@ -2,7 +2,7 @@ import React from "react";
 
 export default function Footer() {
   return (
-    <footer className="bg-neutral-50 py-16 md:py-24 mt-16">
+    <footer className="bg-neutral-50 py-16 md:py-24 pt-16">
       <div className="container mx-auto px-4 max-w-7xl">
         {/* Top section with main title */}
         <div className="mb-16 md:mb-24">
