@@ -78,12 +78,12 @@ export default function Navbar() {
         <div className="flex items-center space-x-8">
           <nav className="hidden md:flex space-x-8">
             <a
-              href="/gallery"
+              href="/locations"
               className={`hover:opacity-80 font-serif ${
                 pastHero ? "text-black" : "text-white"
               }`}
             >
-              Gallery
+              Locations
             </a>
             <a
               href="/info"
