@@ -60,7 +60,7 @@ export default function Navbar() {
             ? "animate-slideDown"
             : "transform translate-y-0"
           : "transform -translate-y-full"
-      } ${pastHero ? "" : "bg-transparent"}`}
+      } ${pastHero ? "bg-white border-b" : "bg-transparent"}`}
       onAnimationEnd={() => setAnimateIn(false)}
     >
       <div className="px-6 py-4 flex justify-between items-center">
