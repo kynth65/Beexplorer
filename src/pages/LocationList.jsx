@@ -5,8 +5,7 @@ import kamakura from "../assets/kamakura.png";
 import Navbar from "../components/homepage/Navbar";
 
 export default function LocationList() {
-  // We'll use this to track which location is being hovered
-  const [activeLocation, setActiveLocation] = useState(null);
+  const [hoveredId, setHoveredId] = useState(null);
 
   // Sample locations data - in a real app, you would import this or fetch from an API
   const locations = [
@@ -53,7 +52,7 @@ export default function LocationList() {
     <>
       <Navbar style={{ text: "text-black" }} />
 
-      <section className="bg-white">
+      <section className="bg-white pt-10">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Heading */}
           <div className="text-center py-16">
@@ -70,27 +69,22 @@ export default function LocationList() {
             {locations.map((location) => (
               <div
                 key={location.id}
-                className="group relative border-t border-gray-200 py-12 overflow-hidden hover:bg-gray-50 transition-colors duration-300 cursor-pointer"
+                className="relative border-t border-gray-200 py-12 cursor-pointer overflow-hidden"
+                onMouseEnter={() => setHoveredId(location.id)}
+                onMouseLeave={() => setHoveredId(null)}
               >
-                {/* Background image - use actual image element instead of background-image */}
-                <div
-                  className={`absolute inset-0 w-full h-full overflow-hidden transition-opacity duration-500 ${
-                    activeLocation === location ? "opacity-100" : "opacity-0"
-                  }`}
-                >
-                  <img
-                    src={location.image}
-                    alt={location.name}
-                    className="absolute inset-0 w-full h-full object-cover transform transition-transform duration-700 ease-out"
+                {/* Background Image Container */}
+                {hoveredId === location.id && (
+                  <div
+                    className="absolute inset-0 w-full h-full transition-all duration-300"
                     style={{
-                      transform:
-                        activeLocation === location
-                          ? "scale(1)"
-                          : "scale(1.05)",
+                      backgroundImage: `url(${location.image})`,
+                      backgroundSize: "cover",
+                      backgroundPosition: "center",
+                      opacity: 0.3,
                     }}
-                  />
-                  <div className="absolute inset-0 bg-white bg-opacity-70"></div>
-                </div>
+                  ></div>
+                )}
 
                 {/* Location content */}
                 <div className="container mx-auto px-4 max-w-7xl relative z-10">
@@ -99,13 +93,19 @@ export default function LocationList() {
                       {location.name}
                     </h3>
 
-                    {/* Description that appears on hover */}
+                    {/* Description that appears on hover - Always present but with varying opacity */}
                     <div
-                      className={`md:ml-auto max-w-md mt-4 md:mt-0 transition-all duration-500 ease-out ${
-                        activeLocation === location
-                          ? "opacity-100 translate-y-0 visible"
-                          : "opacity-0 translate-y-4 invisible"
-                      }`}
+                      className="md:ml-auto max-w-md mt-4 md:mt-0 overflow-hidden"
+                      style={{
+                        opacity: hoveredId === location.id ? 1 : 0,
+                        transform:
+                          hoveredId === location.id
+                            ? "translateY(0)"
+                            : "translateY(10px)",
+                        maxHeight: hoveredId === location.id ? "200px" : "0",
+                        transition:
+                          "opacity 600ms ease, transform 600ms ease, max-height 600ms ease",
+                      }}
                     >
                       <p className="text-lg text-black font-serif">
                         {location.description}
