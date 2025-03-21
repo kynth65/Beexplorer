@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 // Import images directly
 import akihabara from "../assets/akihabara.jpg";
 import kamakura from "../assets/kamakura.png";
