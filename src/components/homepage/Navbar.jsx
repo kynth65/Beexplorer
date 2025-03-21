@@ -78,6 +78,9 @@ export default function Navbar() {
             >
               Contact
             </a>
+            <a href="/faqs" className="text-black hover:opacity-80 font-serif">
+              FAQs
+            </a>
           </nav>
 
           {/* Inquire Button */}
