@@ -71,12 +71,7 @@ export default function Navbar() {
             <a href="/info" className="text-black hover:opacity-80 font-serif">
               Info
             </a>
-            <a
-              href="/explore"
-              className="text-black hover:opacity-80 font-serif"
-            >
-              Explore
-            </a>
+
             <a
               href="/contact"
               className="text-black hover:opacity-80 font-serif"
