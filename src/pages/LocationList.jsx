@@ -62,11 +62,11 @@ export default function LocationList() {
     <>
       <Navbar style={{ text: "text-black" }} />
 
-      <section className="bg-white pt-10">
+      <section className="bg-white pt-20 md:pt-28">
         <div className="container mx-auto px-4 max-w-7xl">
           {/* Heading */}
           <div className="text-center py-16">
-            <h3 className="uppercase text-sm tracking-widest text-gray-500 mb-4 font-serif">
+            <h3 className="uppercase text-sm tracking-widest text-blue-600 mb-4 font-serif">
               DESTINATIONS
             </h3>
             <h2 className="text-4xl md:text-5xl lg:text-7xl font-serif text-gray-900 leading-tight">
