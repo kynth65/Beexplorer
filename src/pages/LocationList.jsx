@@ -1,51 +1,61 @@
 import { useState } from "react";
 // Import images directly
-import akihabara from "../assets/akihabara.jpg";
+import sensouji from "../assets/sensouji_dark.png";
+import paris from "../assets/paris.webp";
+import singapore from "../assets/marina_bay.jpg";
+import bangkok from "../assets/bangkok.jpg";
+import taipei from "../assets/taipei.jpg";
+import bali from "../assets/bali.jpg";
 import kamakura from "../assets/kamakura.png";
 import Navbar from "../components/homepage/Navbar";
 
 export default function LocationList() {
   const [hoveredId, setHoveredId] = useState(null);
 
-  // Sample locations data - in a real app, you would import this or fetch from an API
+  // Updated locations data with descriptions matching each location
   const locations = [
     {
       id: 1,
       name: "TOKYO",
-      image: akihabara,
-      description: "Experience ancient traditions in modern Japan",
+      image: sensouji,
+      description:
+        "Experience ancient traditions in modern Japan's vibrant capital",
     },
     {
       id: 2,
       name: "PARIS",
-      image: kamakura,
-      description: "Discover the city of lights and romance",
+      image: paris,
+      description:
+        "Discover the city of lights, romance, and iconic architecture",
     },
     {
       id: 3,
-      name: "MOJAVE",
-      image: akihabara,
-      description: "Explore the beautiful desert landscapes",
+      name: "SINGAPORE",
+      image: singapore,
+      description:
+        "Explore the futuristic city-state where nature meets innovation",
     },
     {
       id: 4,
-      name: "SONOMA",
-      image: kamakura,
-      description: "Indulge in wine country elegance",
+      name: "BANGKOK",
+      image: bangkok,
+      description:
+        "Immerse yourself in Thailand's bustling capital of temples and markets",
     },
     {
       id: 5,
-      name: "MONTEREY",
-      image: akihabara,
-      description: "Experience coastal California charm",
+      name: "TAIPEI",
+      image: taipei,
+      description:
+        "Experience Taiwan's dynamic capital of night markets and mountain views",
     },
     {
       id: 6,
-      name: "SEQUOIA",
-      image: kamakura,
-      description: "Walk among ancient giant trees",
+      name: "BALI",
+      image: bali,
+      description:
+        "Unwind in Indonesia's island paradise of beaches, rice terraces and temples",
     },
-    // Additional locations would be added here
   ];
 
   return (
