@@ -6,7 +6,7 @@ export default function Info() {
     <>
       <Navbar />
       {/* About Us Section with Decorative Travel Elements */}
-      <section className="py-16 md:py-24 md:pt-40 bg-neutral-50 relative overflow-hidden">
+      <section className="py-16 pt-40 md:py-24 bg-neutral-50 relative overflow-hidden">
         {/* Decorative airplane with dashed path */}
         <div className="absolute top-20 right-0 hidden md:block">
           <svg

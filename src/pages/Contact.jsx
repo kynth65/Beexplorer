@@ -35,7 +35,7 @@ export default function Contact() {
     <>
       <Navbar />
       {/* Hero Section with Travel Elements */}
-      <section className="py-16 md:py-24 md:pt-40 bg-neutral-50 relative overflow-hidden">
+      <section className="py-16 pt-40 md:py-24 bg-neutral-50 relative overflow-hidden">
         {/* Decorative airplane with dashed path */}
         <div className="absolute top-24 right-10 hidden md:block">
           <svg
